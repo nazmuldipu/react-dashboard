@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.dash-logo {
+  width: 22px;
+  height: 22px;
+}

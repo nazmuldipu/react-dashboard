@@ -1,3 +1,6 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
+import './fonts/Roboto.ttf';
 import './index.css';
 
 import React from 'react';

@@ -1,0 +1,144 @@
+$side-nav-background: #fff;
+$text-color: #75859b;
+$active-color: #367bed;
+
+a:hover {
+  text-decoration: none;
+  color: $active-color;
+}
+
+.subnav.active,
+.subnav:hover {
+  color: $active-color;
+}
+
+.sidebar {
+  padding: 0;
+  margin: 0;
+  color: $text-color;
+  background-color: $side-nav-background;
+  height: 100vh;
+  overflow-y: auto;
+  transition: width 0.7s;
+  .brand {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 15px 0 35px 0;
+    a {
+      text-decoration: none;
+      color: $text-color;
+      .brand-name {
+        color: #ffc247 !important;
+      }
+    }
+  }
+}
+
+.widget-content {
+  & > ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    &li {
+      padding: 5px;
+    }
+  }
+  &-category {
+    cursor: pointer;
+    color: inherit;
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 10px 20px 10px 22px;
+    line-height: 22px;
+    font-size: 13.5px;
+    &.opened {
+      color: $active-color;
+      border-left: 3px solid $active-color;
+    }
+    &.has-sub-cat {
+      &.opened::after {
+        content: "\f078";
+      }
+      &::after {
+        position: absolute;
+        font-size: 10px;
+        font-family: fontawesome;
+        content: "\f053";
+        right: 5px;
+        top: 2px;
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        line-height: 16px;
+        color: $text-color;
+        // background-color: #f40;
+        // border-radius: 4px;
+      }
+    }
+  }
+  &-sub-category {
+    max-height: 0px;
+    overflow-y: hidden;
+    margin: 0;
+    transition: ease-in-out 500ms max-height;
+    ul {
+      padding: 0 10px 10px 40px;
+      list-style: outside none none;
+      li {
+        padding: 0;
+        a {
+          color: inherit;
+          font-size: 12px;
+        }
+      }
+    }
+    &.opened {
+      max-height: 100vh;
+      transition: ease-in-out 1000ms max-height;
+    }
+    &-list {
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      line-height: 35px;
+    }
+  }
+}
+
+.wide {
+  width: 227px;
+}
+
+.narrow {
+  width: 50px;
+  .brand {
+    height: 57px;
+    font-size: 15px;
+    overflow: hidden;
+    &-text {
+      display: none;
+    }
+  }
+  .has-sub-cat::after {
+    content: "";
+    width: 0;
+    height: 0;
+  }
+  .category-text {
+    font-size: 0;
+  }
+  .widget-content-sub-category.opened {
+    ul {
+      padding: 10px;
+      float: right;
+      .sub-category-text {
+        font-size: 0;
+      }
+    }
+  }
+  .widget-content-category {
+    padding-right: 0;
+  }
+}
