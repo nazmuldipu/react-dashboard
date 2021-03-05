@@ -1,6 +1,7 @@
 $side-nav-background: #fff;
 $text-color: #75859b;
 $active-color: #367bed;
+$nav-background: #eff;
 
 a:hover {
   text-decoration: none;
@@ -50,12 +51,16 @@ a:hover {
     display: block;
     width: 100%;
     position: relative;
-    padding: 10px 20px 10px 22px;
+    padding: 10px 20px 10px 15px;
     line-height: 22px;
     font-size: 13.5px;
+    .category-text{
+      padding-left: 10px;
+    }
     &.opened {
       color: $active-color;
       border-left: 3px solid $active-color;
+      background-color: $nav-background;
     }
     &.has-sub-cat {
       &.opened::after {
@@ -67,7 +72,7 @@ a:hover {
         font-family: fontawesome;
         content: "\f053";
         right: 5px;
-        top: 2px;
+        top: 10px;
         width: 16px;
         height: 16px;
         text-align: center;
@@ -86,6 +91,7 @@ a:hover {
     ul {
       padding: 0 10px 10px 40px;
       list-style: outside none none;
+      background-color: $nav-background;
       li {
         padding: 0;
         a {

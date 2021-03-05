@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Icons from "../lib/icons";
 import "../styles/sideNavbar.scss";
+import logo from "../assets/images/monerbari.png";
 
 const SideNavbar = ({ expand }) => {
-  const [navlink, setNavLink] = useState("dashboard");
+  const [navlink, setNavLink] = useState("Dashboard");
   const [subLink, setSubLink] = useState("");
 
   const sidenav = [
@@ -72,8 +73,8 @@ const SideNavbar = ({ expand }) => {
     <div className={"sidebar " + (expand ? "wide" : "narrow")}>
       <div className="brand">
         <Link to="/dashboard">
-          <span className="brand-name">Dashboard</span>{" "}
-          <span className="brand-text"> Superstore </span>
+          <img className="dash-logo" src={logo} alt="Logo" />
+          <span className="brand-name"> Dashboard</span>{" "}
         </Link>
       </div>
       <div className="widget-content">
@@ -90,7 +91,7 @@ const SideNavbar = ({ expand }) => {
                   {/* <i className={"fa " + item.icon}></i> */}
                   <Icons
                     name={item.name}
-                    className={"dash-logo"}
+                    className={"dash-icon"}
                     fill={navlink === item.name ? "blue" : ""}
                     stroke={navlink === item.name ? "blue" : ""}
                   />
